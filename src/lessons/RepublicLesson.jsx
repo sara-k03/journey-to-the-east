@@ -72,7 +72,14 @@ export default function RepublicLesson() {
           </tbody>
         </table>
       </div>
-      <p className="callout">ḷ and ḹ are rare vowels. They mostly only show up in Vedic Sanskrit.</p>
+      <p className="callout">ḷ and ḹ are rare vowels. They mostly only show up in Vedic Sanskrit. There also another letter that only shows up in Vedic Sanskrit (see below).</p>
+      <div className="featured-letter">
+        <Sound deva="ळ" iast="ḻa" />
+      </div>
+      <p>
+        ḻ is an alternative form of ḍ and usually replaces ḍ when it is between two vowels. This only appears in the
+        oldest form of Sanskrit, Vedic Sanskrit. However, it is still common in many South Indian languages.
+      </p>
 
       <h4>Sandhyakṣara</h4>
       <p>

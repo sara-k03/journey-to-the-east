@@ -559,6 +559,15 @@ a.level-button:focus-visible {
   font-size: 0.95rem;
 }
 
+.featured-letter {
+  margin: 4px 0 8px;
+  text-align: center;
+}
+
+.featured-letter .sound-deva {
+  font-size: 3rem;
+}
+
 .deva-chip {
   display: inline-block;
   padding: 0.3em 0.35em 0;
