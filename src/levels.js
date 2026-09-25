@@ -10,12 +10,12 @@ export const levels = [
   { id: 'chola', number: 4, empire: 'Chola', description: 'Translating Devanāgarī I' },
   { id: 'rashtrakuta', number: 5, empire: 'Rashtrakuta', description: 'Śabdarūpāṇi' },
   { id: 'chalukya', number: 6, empire: 'Chalukya', description: 'Lakāraḥ' },
-  { id: 'gupta', number: 7, empire: 'Gupta', description: 'Transcribing Devanāgarī II' },
-  { id: 'kamarupa', number: 8, empire: 'Kamarupa', description: 'Sandhi' },
+  { id: 'kamarupa', number: 7, empire: 'Kamarupa', description: 'Transcribing Devanāgarī II' },
+  { id: 'gupta', number: 8, empire: 'Gupta', description: 'Sandhi' },
   { id: 'kushan', number: 9, empire: 'Kushan', description: 'Translating Devanāgarī II' },
   { id: 'maurya', number: 10, empire: 'Maurya', description: 'Transcribing Śāstrāṇi' },
   { id: 'kuru', number: 11, empire: 'Kuru', description: 'Translating Śāstrāṇi' },
-  { id: 'meluhha', number: 12, empire: 'Meluhha', description: 'Do you know śruti?' },
+  { id: 'sarasvati', number: 12, empire: 'Sarasvati', description: 'Do you know śruti?' },
 ]
 
 export const levelById = Object.fromEntries(levels.map((level) => [level.id, level]))
