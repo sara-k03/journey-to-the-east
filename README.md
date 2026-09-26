@@ -44,13 +44,6 @@ Each playable level has an entry in `src/levels.js` with a `path`, a question se
 
 A question counts toward progress only if the player answers it correctly without opening the lesson first. Progress is saved per level in `localStorage` under the `jtte-progress` key.
 
-### Running locally
-
-```
-npm install
-npm run dev
-```
-
 ## Credits
 
 ### Images
