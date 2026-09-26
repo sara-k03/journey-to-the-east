@@ -38,7 +38,6 @@ export default function Home() {
     <div className="page home">
       <header className="hero">
         <h1 className="title">Journey to the East</h1>
-        <p className="subtitle">Can you make it across the Sarasvati?</p>
       </header>
       <main>
         <ol className="levels">
