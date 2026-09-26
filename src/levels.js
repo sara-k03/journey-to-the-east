@@ -1,11 +1,14 @@
 import { letters } from './data/republic.js'
+import { aksaras } from './data/maratha.js'
 import mumbaiBackground from '../background-images/modern-mumbai-web.jpg'
+import raigadBackground from '../background-images/raigad-fort.jpg'
 
 // Level list from the game script. `path` is set only for levels that are playable;
-// `total` is the number of questions that make up 100%; `background` replaces the default Ellora image.
+// `total` is the number of questions that make up 100%; `background` replaces the default Ellora image;
+// `darkenBackground` adds a heavier overlay for bright images.
 export const levels = [
   { id: 'republic', number: 1, empire: 'Republic', description: 'Svarāḥ and Vyañjanāḥ', path: '/level/republic', total: letters.length, background: mumbaiBackground },
-  { id: 'maratha', number: 2, empire: 'Maratha', description: 'Bārākhaḍī and Saṃyuktākṣaras' },
+  { id: 'maratha', number: 2, empire: 'Maratha', description: 'Mātrāḥ and Saṃyuktākṣarāṇi', path: '/level/maratha', total: aksaras.length, background: raigadBackground, darkenBackground: true },
   { id: 'vijayanagara', number: 3, empire: 'Vijayanagara', description: 'Transcribing Devanāgarī I' },
   { id: 'chola', number: 4, empire: 'Chola', description: 'Translating Devanāgarī I' },
   { id: 'rashtrakuta', number: 5, empire: 'Rashtrakuta', description: 'Śabdarūpāṇi' },

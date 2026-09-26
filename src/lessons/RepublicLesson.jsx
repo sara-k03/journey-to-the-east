@@ -1,23 +1,5 @@
 // Level 1 lesson: vowels, consonants, antasthāḥ, uṣmāṇaḥ, anusvāra, and visarga.
-
-// A sound shown as Devanagari with its IAST underneath.
-function Sound({ deva, iast }) {
-  return (
-    <span className="sound">
-      <span className="sound-deva" lang="sa">{deva}</span>
-      <span className="sound-iast">{iast}</span>
-    </span>
-  )
-}
-
-// Devanagari set apart as a chip inside a sentence, so it reads clearly at text size.
-function Deva({ children }) {
-  return (
-    <span className="deva-chip" lang="sa">
-      {children}
-    </span>
-  )
-}
+import { Deva, Sound } from './LessonParts.jsx'
 
 const hrasva = [['अ', 'a'], ['इ', 'i'], ['उ', 'u'], ['ऋ', 'ṛ'], ['ऌ', 'ḷ']]
 const dirgha = [['आ', 'ā'], ['ई', 'ī'], ['ऊ', 'ū'], ['ॠ', 'ṝ'], ['ॡ', 'ḹ']]
