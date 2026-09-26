@@ -3,7 +3,7 @@
 To view the game, visit this link: https://sara-k03.github.io/journey-to-the-east/#/ 
 
 ## Description
-TBA
+[Visit this link to learn more](https://www.sarayukondaveeti.com/journey-to-the-east.html)
 
 ## Code Structure 
 
