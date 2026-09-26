@@ -268,7 +268,7 @@ export default function FallingLevel({ level, items, categories, lesson }) {
           </section>
           <section className="panel mode-card">
             <h2>Practice</h2>
-            <p>No lives and no progress. Pick what falls and how fast.</p>
+            <p>Practice with no constraints. Pick what falls and how fast.</p>
             <label className="mode-field">
               Akṣaras
               <select value={category} onChange={(e) => setCategory(e.target.value)}>
