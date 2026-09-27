@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { levels } from '../levels.js'
+import { bonusLevels, levels } from '../levels.js'
 import { getMastered, percentComplete } from '../progress.js'
 import ProgressBar from '../components/ProgressBar.jsx'
 
@@ -42,6 +42,12 @@ export default function Home() {
       <main>
         <ol className="levels">
           {levels.map((level) => (
+            <LevelButton key={level.id} level={level} />
+          ))}
+        </ol>
+        <h2 className="levels-heading">Telugu Bonus Levels</h2>
+        <ol className="levels">
+          {bonusLevels.map((level) => (
             <LevelButton key={level.id} level={level} />
           ))}
         </ol>

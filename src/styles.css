@@ -172,6 +172,17 @@ a.level-button:focus-visible {
   color: var(--muted);
 }
 
+.levels-heading {
+  margin: 56px 0 20px;
+  font-family: 'Jaini', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1;
+  text-align: center;
+  color: var(--sand-100);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.75);
+}
+
 /* ---------- Progress ---------- */
 
 .progress {
@@ -273,7 +284,7 @@ a.level-button:focus-visible {
 
 .quiz-prompt,
 .deva-inline {
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
 }
 
 .quiz-prompt {
@@ -551,7 +562,7 @@ a.level-button:focus-visible {
 }
 
 .sound-deva {
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: 1.6rem;
 }
 
@@ -574,7 +585,7 @@ a.level-button:focus-visible {
   border: 1px solid var(--lesson-line);
   border-radius: 6px;
   background: var(--lesson-tint);
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: 1.15em;
   line-height: 1.25;
   vertical-align: -0.1em;
@@ -630,7 +641,7 @@ a.level-button:focus-visible {
 
 /* ---------- Falling game (Level 2) ---------- */
 
-/* The Raigad photo has a pale sky behind the title, so it needs a heavier overlay. */
+/* Bright photos (the Raigad sky, the Godavari sunset) need a heavier overlay behind the title. */
 .level-background.is-darkened::after {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0.65) 100%);
 }
@@ -768,7 +779,7 @@ a.level-button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: clamp(3.5rem, 13vw, 5.5rem);
   line-height: 1.3;
   white-space: nowrap;
@@ -850,7 +861,7 @@ a.level-button:focus-visible {
 }
 
 .sutra {
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: 1.9rem;
   text-align: center;
 }
@@ -893,7 +904,7 @@ a.level-button:focus-visible {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.25);
   color: var(--lesson-text);
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: 1.2rem;
 }
 
@@ -961,7 +972,7 @@ a.level-button:focus-visible {
 }
 
 .builder-deva {
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: 4rem;
   line-height: 1.3;
 }
@@ -1024,7 +1035,7 @@ a.level-button:focus-visible {
 }
 
 .reading-split {
-  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
+  font-family: 'Noto Serif Devanagari', 'Noto Serif Telugu', 'Kohinoor Devanagari', 'Devanagari Sangam MN', serif;
   font-size: 1.4rem;
 }
 
@@ -1032,4 +1043,24 @@ a.level-button:focus-visible {
   margin-right: 6px;
   padding: 0 3px;
   border-bottom: 2px solid var(--lesson-accent);
+}
+
+/* ---------- Telugu bonus lesson ---------- */
+
+/* The hallu column stays pinned while the wide gunintham chart scrolls sideways. */
+.gunintham-chart tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--ink-900);
+  text-align: center;
+}
+
+.gunintham-chart th,
+.gunintham-chart td {
+  white-space: nowrap;
+}
+
+.gunintham-chart thead .sound-iast {
+  font-size: 0.75rem;
 }

@@ -15,8 +15,8 @@ function pickNext(items, mastered, previousId) {
   return pool[Math.floor(Math.random() * pool.length)] ?? items[0]
 }
 
-// A level where the player sees Devanagari and types it in IAST.
-export default function TranscriptionLevel({ level, items, lesson, itemLabel = 'questions' }) {
+// A level where the player sees Devanagari (or another script, per `lang`) and types it in IAST.
+export default function TranscriptionLevel({ level, items, lesson, itemLabel = 'questions', keys, lang = 'sa' }) {
   const [mastered, setMastered] = useState(() => getMastered(level.id))
   const [current, setCurrent] = useState(() => pickNext(items, mastered, null))
   const [input, setInput] = useState('')
@@ -91,7 +91,11 @@ export default function TranscriptionLevel({ level, items, lesson, itemLabel = '
   return (
     <div className="page level-page">
       {level.background && (
-        <div className="level-background" style={{ backgroundImage: `url(${level.background})` }} aria-hidden="true" />
+        <div
+          className={`level-background${level.darkenBackground ? ' is-darkened' : ''}`}
+          style={{ backgroundImage: `url(${level.background})` }}
+          aria-hidden="true"
+        />
       )}
       <LessonButton onClick={openLesson} />
       <LessonDialog open={lessonOpen} onClose={closeLesson} title={`Lesson · ${level.description}`}>
@@ -100,7 +104,7 @@ export default function TranscriptionLevel({ level, items, lesson, itemLabel = '
 
       <Link to="/" className="back-link">← All levels</Link>
       <h1 className="title">{level.empire}</h1>
-      <p className="subtitle">Level {level.number} · {level.description}</p>
+      <p className="subtitle">{level.bonus ? 'Bonus Level' : 'Level'} {level.number} · {level.description}</p>
 
       <div className="level-progress">
         <ProgressBar value={percentComplete(masteredCount, items.length)} label={level.empire} />
@@ -110,7 +114,7 @@ export default function TranscriptionLevel({ level, items, lesson, itemLabel = '
       </div>
 
       <form className="quiz panel" onSubmit={handleSubmit}>
-        <p className="quiz-prompt" lang="sa">{current.prompt}</p>
+        <p className="quiz-prompt" lang={lang}>{current.prompt}</p>
         <label htmlFor="answer" className="quiz-label">Write this in IAST.</label>
         <input
           id="answer"
@@ -124,7 +128,7 @@ export default function TranscriptionLevel({ level, items, lesson, itemLabel = '
           autoCorrect="off"
           spellCheck={false}
         />
-        <IastKeys onKey={insert} disabled={result !== null} />
+        <IastKeys onKey={insert} disabled={result !== null} keys={keys} />
         <p className={`quiz-feedback ${result ? `is-${result}` : ''}`} aria-live="polite">
           {feedback}
         </p>
