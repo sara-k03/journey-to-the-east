@@ -395,6 +395,8 @@ a.level-button:focus-visible {
 .quiz-submit:focus-visible,
 .iast-key:focus-visible,
 .lesson-button:focus-visible,
+.settings-button:focus-visible,
+.settings-action:focus-visible,
 .lesson-close:focus-visible {
   outline: 3px solid var(--saffron);
   outline-offset: 2px;
@@ -402,7 +404,9 @@ a.level-button:focus-visible {
 
 /* ---------- Lesson ---------- */
 
-.lesson-button {
+
+.lesson-button,
+.settings-button {
   position: fixed;
   top: 16px;
   right: 16px;
@@ -418,9 +422,15 @@ a.level-button:focus-visible {
   cursor: pointer;
 }
 
-.lesson-button:hover {
+.lesson-button:hover,
+.settings-button:hover {
   background: var(--panel-hover);
   border-color: var(--saffron);
+}
+
+/* Sits just left of the light bulb on the home page. */
+.settings-button {
+  right: 64px;
 }
 
 .lesson {
@@ -1063,4 +1073,71 @@ a.level-button:focus-visible {
 
 .gunintham-chart thead .sound-iast {
   font-size: 0.75rem;
+}
+
+/* ---------- Settings ---------- */
+
+.settings-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--lesson-line);
+}
+
+.settings-option p {
+  margin: 4px 0 0;
+  color: var(--lesson-accent);
+}
+
+.settings-option strong {
+  font-size: 1.1rem;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.settings-action {
+  padding: 10px 18px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 10px;
+  background: var(--lesson-tint);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.settings-action:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.settings-action.is-danger {
+  border-color: var(--bad);
+  color: var(--bad);
+}
+
+.settings-action.is-danger:hover {
+  background: rgba(240, 138, 122, 0.15);
+}
+
+.settings-option.is-sub {
+  padding-left: 20px;
+}
+
+.settings-option.is-sub strong {
+  font-size: 1rem;
+}
+
+.settings-status {
+  margin: 16px 0 0;
+  color: var(--good);
 }

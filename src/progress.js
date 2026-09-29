@@ -34,6 +34,28 @@ export function markLessonSeen(levelId) {
   writeKey(LESSONS_SEEN_KEY, levelId, true)
 }
 
+// Wipes mastered questions, high scores and seen lessons for every level.
+export function resetAllProgress() {
+  try {
+    for (const key of [KEY, HIGH_SCORE_KEY, LESSONS_SEEN_KEY]) localStorage.removeItem(key)
+  } catch {
+    // Storage unavailable — nothing was saved to reset.
+  }
+}
+
+// Wipes mastered questions, high score and seen lesson for one level.
+export function resetLevelProgress(levelId) {
+  for (const key of [KEY, HIGH_SCORE_KEY, LESSONS_SEEN_KEY]) {
+    try {
+      const all = readKey(key)
+      delete all[levelId]
+      localStorage.setItem(key, JSON.stringify(all))
+    } catch {
+      // Storage unavailable — nothing was saved to reset.
+    }
+  }
+}
+
 function readKey(key) {
   try {
     const all = JSON.parse(localStorage.getItem(key))
