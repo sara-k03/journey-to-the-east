@@ -56,6 +56,22 @@ export function resetLevelProgress(levelId) {
   }
 }
 
+// One-time cleanup: the original Maratha level was removed for a rework, so drop its
+// saved progress once per browser. The flag stops it from wiping the reworked level later.
+const MARATHA_RESET_KEY = 'jtte-maratha-reset-v1'
+
+function clearOldMaratha() {
+  try {
+    if (localStorage.getItem(MARATHA_RESET_KEY)) return
+    resetLevelProgress('maratha')
+    localStorage.setItem(MARATHA_RESET_KEY, 'done')
+  } catch {
+    // Storage unavailable — nothing was saved to clear.
+  }
+}
+
+clearOldMaratha()
+
 function readKey(key) {
   try {
     const all = JSON.parse(localStorage.getItem(key))

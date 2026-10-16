@@ -1,7 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Republic from './pages/Republic.jsx'
-import Maratha from './pages/Maratha.jsx'
 import Godavari from './pages/Godavari.jsx'
 
 // HashRouter keeps deep links working on GitHub Pages, which has no SPA fallback.
@@ -11,7 +10,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/level/republic" element={<Republic />} />
-        <Route path="/level/maratha" element={<Maratha />} />
         <Route path="/level/godavari" element={<Godavari />} />
         <Route path="*" element={<Home />} />
       </Routes>
